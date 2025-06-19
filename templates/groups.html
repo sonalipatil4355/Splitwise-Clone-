@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="text-3xl font-bold mb-4">Groups</h1>
+  <ul class="space-y-2">
+    {% for group in groups %}
+      <li class="bg-white p-4 rounded shadow">
+        <strong>{{ group.name }}</strong> ({{ group.users.count }} members)
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

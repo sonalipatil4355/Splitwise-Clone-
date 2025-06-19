@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2 class="text-xl font-bold mb-4">Balances for {{ group.name }}</h2>
+  <ul class="space-y-2">
+    {% for user_id, balance in balances.items %}
+      <li class="p-3 bg-white rounded shadow">User {{ user_id }}: ₹{{ balance }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

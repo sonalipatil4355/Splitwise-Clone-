@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="text-2xl font-bold mb-4">Ask SplitwiseBot 🤖</h1>
+  <form method="POST" class="space-y-4">
+    {% csrf_token %}
+    <textarea name="query" rows="3" class="w-full p-2 border rounded" placeholder="e.g. How much does Alice owe?"></textarea>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" type="submit">Ask</button>
+  </form>
+  {% if response %}
+    <div class="mt-4 p-4 bg-gray-100 border rounded">
+      <strong>Answer:</strong>
+      <p>{{ response }}</p>
+    </div>
+  {% endif %}
+{% endblock %}
